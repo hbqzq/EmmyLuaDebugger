@@ -17,11 +17,15 @@
 
 #ifdef EMMY_USE_LUA_SOURCE
 ///////////////////////////EMMY_USE_LUA_SOURCE
+#ifndef LUA_USE_CPP
 extern "C" {
+#endif
 #include "lua.h"
 #include "lualib.h"
 #include "lauxlib.h"
+#ifndef LUA_USE_CPP 
 }
+#endif
 
 #if defined(EMMY_LUA_51) || defined(EMMY_LUA_52)
 typedef ptrdiff_t lua_KContext;

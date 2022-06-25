@@ -18,7 +18,7 @@
 //#define EMMY_CORE_VERSION "1.0.0"
 
 #ifdef _MSC_VER
-#define EMMY_CORE_EXPORT    __declspec(dllexport)
+#define EMMY_CORE_EXPORT    extern //__declspec(dllexport)
 #else
 #define EMMY_CORE_EXPORT    extern
 #endif

@@ -6,9 +6,10 @@ set(CMAKE_INSTALL_PREFIX install)
 set(CMAKE_CXX_STANDARD 11)
 
 set(EMMY_LUA_VERSION "54" CACHE STRING "Lua version: jit/51/52/53/54")
+option(EMMY_LUA_CPP "Use cpp version of lua" OFF)
 
 if(${EMMY_LUA_VERSION} STREQUAL "54")
-    set(EMMY_LUA_DIR "lua-5.4.0")
+    set(EMMY_LUA_DIR "lua-5.4.2")
     add_definitions(-DEMMY_LUA_54)
 elseif(${EMMY_LUA_VERSION} STREQUAL "53")
     set(EMMY_LUA_DIR "lua-5.3.5")
@@ -24,6 +25,11 @@ elseif(${EMMY_LUA_VERSION} STREQUAL "jit")
     add_definitions(-DEMMY_LUA_JIT)
     # if LUAJIT support lua_setfuncs use this macro define
     #add_definitions(-DEMMY_LUA_JIT_SUPPORT_LUA_SETFUNCS)
+endif()
+
+if(EMMY_LUA_CPP)
+    set(EMMY_LUA_DIR "${EMMY_LUA_DIR}-cpp")
+    add_definitions(-DLUA_USE_CPP)
 endif()
 
 add_definitions(-DEMMY_CORE_VERSION="1.3.0")

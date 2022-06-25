@@ -24,7 +24,7 @@ endmacro(source_group_by_dir)
 set(EMMY_LUA_VERSION "54" CACHE STRING "Lua version: 51/52/53/54")
 
 if(${EMMY_LUA_VERSION} STREQUAL "54")
-    set(EMMY_LUA_DIR "lua-5.4.0")
+    set(EMMY_LUA_DIR "lua-5.4.2")
     add_definitions(-DEMMY_LUA_54)
 elseif(${EMMY_LUA_VERSION} STREQUAL "53")
     set(EMMY_LUA_DIR "lua-5.3.5")

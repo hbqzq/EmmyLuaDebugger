@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.11)
 
 project (emmy_core)
 
-add_library(emmy_core SHARED)
+add_library(emmy_core STATIC)
 
 add_dependencies(
     emmy_core
